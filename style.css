@@ -1,0 +1,343 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root {
+    --bg-color: rgba(224, 224, 224, 0.5);
+    --primary-color: rgba(232, 169, 209, 0.6);
+    --font-color-white: rgba(50, 50, 50, 0.9);
+    --dark-pink : rgb(255, 90, 161);
+}
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+html {
+    font-size: 62.5%;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+.navbar {
+    max-width: 1170px;
+    height: 40px;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.nav-center {
+    padding: 0 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-icon {
+    color: var(--font-color-white);
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.cart-btn {
+    color: var(--font-color-white);
+    font-size: 2.5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-title {
+    color: var(--font-color-white);
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+.cart-items {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    right: -6px;
+    top: -6px;
+    background: var(--dark-pink);
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.products {
+    max-width: 1170px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.products-title {
+ font-size: 3.5rem;
+ margin: 40px 0 60px 0;
+ text-shadow: #202124;
+ 
+}
+.all-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:  40px 20px;
+}
+
+.single-product-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px 1px;
+    transition:transform 0.3s ease;
+    /* max-width: 350px; */
+    /* width: 95%;
+    padding: 0 0;
+    border: var(--bg-color) 2px;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fffdfd;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 8px 1px;
+    transition:transform 0.3s ease; */
+    /* margin: 20px; */
+}
+
+.product:hover {
+    transform: scale(1.015);
+}
+
+.product-title{
+    font-size: 1.6rem;
+}
+.product-price {
+    font-size: 1.6rem;
+}
+
+.product-description {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.product-img {
+    width: 100%;
+    min-width: 120px;
+    border-radius: 8px 8px 0 0;
+}
+
+.product:hover .product-img {
+    filter: brightness(110%);
+}
+
+.btn {
+    color: var(--font-color-white);
+    font-size: 2.5rem;
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   
+}
+.btn i {
+    margin-right: 4px;
+}
+
+
+
+button:disabled, button[disabled] {
+    background-color: rgb(254, 158, 208);
+    cursor: not-allowed;
+  }
+.btn {
+
+  background-color: var(--primary-color);
+  border: 1px solid var(--bg-color);
+  border-radius: 1rem;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  font-size: 14px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  margin: 20px 0 13px 0;
+}
+
+.btn:hover {
+  border-color: #dadce0;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+.btn:active {
+
+  outline: none;
+  transform: scale(0.98);
+}
+
+.btn.modal-close-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.modal-section.hidden { 
+    display: none;
+}
+.modal-section {
+    
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+   
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    
+}
+
+.cart-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 600px;
+    min-width: 300px;
+    border: 1px solid var(--bg-color);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    background-color: rgb(247, 247, 247);
+    box-shadow: rgba(0, 0, 0, 0.8) 0 0 8px 1px;
+    z-index: 10;
+}
+
+.cart-modal-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cart-modal-single{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    font-size: 2rem;
+}
+
+.modal-item-img {
+    margin-right: 1rem;
+}
+
+.modal-item-img img {
+    width: 150px;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap : 1.5rem;
+}
+
+.first-column {
+margin-right: 5rem;
+}
+
+.modal-item-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-modal-btns {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.modal-item-quantity{
+    display: flex;
+    flex-direction: column;
+}
+
+
+small {
+    color: gray;
+    font-size: small;
+}
+
+
+.total-price {
+    margin-top: 15px;
+    font-size: 2rem;
+}
+
+.second-column i {
+    cursor: pointer;
+    
+}
+
+.modal-item-delete {
+    color:var(--dark-pink) ;
+    font-weight: 700;
+    
+}
+
+.payment-modal {
+    font-size: 2rem;
+}
